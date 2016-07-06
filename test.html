@@ -1,0 +1,44 @@
+
+<meta charset="utf-8" />
+<style type="text/css">
+body{
+    background-color: #425a6c;
+}
+a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	text-decoration: none;
+	color: #000;
+	font-size: 32px;
+	padding: 5px 10px;
+}
+
+a::before{content: "1、";}
+a::after{content: "2、";}
+a:hover::before, a:hover::after { position: absolute; }
+a:hover::before { content: "\5B"; left: -20px; }
+a:hover::after { content: "\5D"; right:  -20px; }
+.icon {
+    display: inline-block;
+    width: 20px; height: 20px;
+    overflow: hidden;
+}
+.icon-del {
+    background: url(delete.png) no-repeat center;
+}
+.icon > .icon {
+    position: relative;
+    left: -20px;
+    border-right: 20px solid transparent;
+    -webkit-filter: drop-shadow(20px 0);
+    filter: drop-shadow(20px 0);    
+}
+HTML代码：
+</style>
+<a>123456</a>
+
+<p><strong>原始图标</strong></p>
+<i class="icon icon-del"></i>
+<p><strong>可以变色的图标</strong></p>
+<i class="icon"><i class="icon icon-del"></i></i>
